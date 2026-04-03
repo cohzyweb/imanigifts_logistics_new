@@ -94,7 +94,13 @@ export default function CustomerLanding() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
             <motion.div initial={{ opacity:0,x:-50 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} className="relative">
-              <div className="aspect-square bg-[#ebe3c2] rounded-xl flex items-center justify-center"><span className="material-symbols-outlined text-[#00442d] opacity-10 text-[200px]">eco</span></div>
+              <div className="aspect-square relative rounded-xl overflow-hidden">
+  <img
+    src="/logistics.jpg"
+    alt="Logistics"
+    className="w-full h-full object-cover"
+  />
+</div>
               <div className="absolute -bottom-8 -right-8 bg-[#00442d] p-8 rounded-xl shadow-xl text-white"><div className="text-4xl font-bold">99.8%</div><div className="text-emerald-200/70 text-xs uppercase tracking-widest mt-1">Precision Rate</div></div>
             </motion.div>
 
