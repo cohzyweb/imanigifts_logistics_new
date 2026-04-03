@@ -96,7 +96,7 @@ export default function CustomerLanding() {
             <motion.div initial={{ opacity:0,x:-50 }} whileInView={{ opacity:1,x:0 }} viewport={{ once:true }} className="relative">
               <div className="aspect-square relative rounded-xl overflow-hidden">
   <img
-    src="/logistics.jpg"
+    src="/warehouse.png"
     alt="Logistics"
     className="w-full h-full object-cover"
   />
