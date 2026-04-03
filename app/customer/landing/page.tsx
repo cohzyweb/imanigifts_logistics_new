@@ -25,7 +25,7 @@ export default function CustomerLanding() {
         {/* Services */}
         <section className="py-28 px-8 md:px-12 bg-[#fff9eb]">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-16"><h2 className="text-3xl font-semibold text-[#00442d] mb-4">Elite Modalities</h2><div className="w-24 h-1 bg-[#00442d]" /></div>
+            <div className="mb-16"><h2 className="text-3xl font-semibold text-[#00442d] mb-4">Services</h2><div className="w-24 h-1 bg-[#00442d]" /></div>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
               <div className="md:col-span-8 bg-[#00442d] rounded-xl p-10 relative overflow-hidden min-h-[280px] flex flex-col justify-end">
                 <span className="material-symbols-outlined text-white/10 absolute top-6 right-6 text-[100px]">flight</span>
