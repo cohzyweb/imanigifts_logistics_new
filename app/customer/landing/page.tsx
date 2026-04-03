@@ -102,7 +102,7 @@ export default function CustomerLanding() {
               <h2 className="text-4xl font-bold text-[#00442d] mb-10">Why Businesses Choose Imani Gift Logistics.</h2>
 
               <motion.div initial="hidden" whileInView="visible" variants={{ visible:{ transition:{ staggerChildren:0.2 }}}} className="space-y-10">
-                {[{icon:"eco",title:"Cost-Effective Shipping",desc:"..."},{icon:"monitoring",title:" Real-Time Tracking",desc:"..."},{icon:"verified_user",title:"Certified & Experienced Team",desc:"..."}].map(f => (
+                {[{icon:"eco",title:"Cost-Effective Shipping",desc:"Imanigifts Logistics provides affordable, reliable delivery with transparent pricing—helping your business save more on every shipment."},{icon:"monitoring",title:" Real-Time Tracking",desc:"Imanigifts Logistics offers real-time tracking, giving you full visibility of your shipments every step of the way for peace of mind and better planning."},{icon:"verified_user",title:"Certified & Experienced Team",desc:"Imanigifts Logistics is powered by a certified, experienced team dedicated to handling your shipments with professionalism, care, and efficiency."}].map(f => (
                   <motion.div key={f.title} variants={{ hidden:{opacity:0,y:20}, visible:{opacity:1,y:0} }} className="flex gap-5">
                     <div className="bg-[#0f5d41] text-[#8cd4b0] w-12 h-12 rounded-lg flex items-center justify-center shrink-0"><span className="material-symbols-outlined">{f.icon}</span></div>
                     <div><h4 className="text-lg font-semibold text-[#00442d] mb-1">{f.title}</h4><p className="text-[#506357] text-sm">{f.desc}</p></div>
