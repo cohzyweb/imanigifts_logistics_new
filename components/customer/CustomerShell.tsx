@@ -21,7 +21,7 @@ export default function CustomerShell({ children }: { children: React.ReactNode 
               <span className="material-symbols-outlined text-[#fff9eb]" style={{fontSize:"20px"}}>card_giftcard</span>
             </div>
             <div>
-              <h1 className="text-lg font-bold text-[#00442d] leading-none" style={{fontFamily:"Manrope,sans-serif"}}>Imanigifts</h1>
+              <h1 className="text-lg font-bold text-[#00442d] leading-none" style={{fontFamily:"Manrope,sans-serif"}}>Imanigifts Logistics</h1>
               <p className="text-[10px] uppercase tracking-widest text-[#506357] font-bold">Customer Portal</p>
             </div>
           </div>
