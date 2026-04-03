@@ -36,7 +36,7 @@ export default function CustomerNav() {
               </span>
             </div>
             <span className="text-xl font-bold text-[#00442d]" style={{ fontFamily: "Manrope,sans-serif" }}>
-              Imanigifts
+              Imanigifts Logistics
             </span>
           </Link>
 
