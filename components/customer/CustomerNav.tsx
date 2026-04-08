@@ -4,10 +4,10 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  ["Services", "#"],
+  ["Services", "/customer/services"],
   ["Tracking", "/customer/track"],
-  ["About", "#"],
-  ["Sustainability", "#"]
+  ["About", "/customer/about"],
+  ["Contact us", "/customer/contact"]
 ];
 
 export default function CustomerNav() {
