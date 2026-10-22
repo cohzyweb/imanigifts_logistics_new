@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import type { Portal, Shipment } from "@/types";
 import { findShipment, getAllShipments } from "@/lib/orders";
@@ -38,7 +38,7 @@ export default function TrackView({
     setShipments(getAllShipments());
   }, []);
 
-  const runSearch = (value: string) => {
+  const runSearch = useCallback((value: string) => {
     const trimmed = value.trim();
     if (!trimmed) {
       setLookup({ state: "idle" });
@@ -50,12 +50,11 @@ export default function TrackView({
         ? { state: "found", shipment: found }
         : { state: "missing", id: trimmed },
     );
-  };
+  }, []);
 
   useEffect(() => {
     if (initialQ) runSearch(initialQ);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialQ]);
+  }, [initialQ, runSearch]);
 
   const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") runSearch(query);
