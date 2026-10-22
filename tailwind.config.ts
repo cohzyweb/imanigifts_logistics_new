@@ -1,15 +1,18 @@
 import type { Config } from "tailwindcss";
+
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: "#00442d",
+        "primary-dark": "#0f5d41",
         "on-primary": "#fff9eb",
+        accent: "#8cd4b0",
         secondary: "#506357",
         background: "#fff9eb",
         surface: "#fff9eb",
@@ -19,22 +22,18 @@ const config: Config = {
         "surface-container-lowest": "#ffffff",
         "surface-container-high": "#e4dbc0",
         "surface-container-highest": "#dbd2b5",
+        highlight: "#fdf4d3",
+        "highlight-deep": "#ebe3c2",
+        "highlight-mid": "#f1e8c8",
         "on-surface": "#1f1c08",
         "on-surface-variant": "#506357",
         outline: "#506357",
         error: "#ba1a1a",
       },
       fontFamily: {
-        headline: ["Manrope", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        label: ["Inter", "sans-serif"],
-      },
-      borderRadius: {
-        DEFAULT: "0.25rem",
-        lg: "0.5rem",
-        xl: "0.75rem",
-        "2xl": "1rem",
-        full: "9999px",
+        headline: ["var(--font-manrope)", "ui-sans-serif", "sans-serif"],
+        body: ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        label: ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
       },
     },
   },

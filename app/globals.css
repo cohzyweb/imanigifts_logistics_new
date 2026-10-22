@@ -1,36 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* { box-sizing: border-box; margin: 0; }
+@layer base {
+  body {
+    font-family: var(--font-inter);
+    background-color: theme("colors.background");
+    color: theme("colors.on-surface");
+  }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #fff9eb;
-  color: #1f1c08;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-manrope);
+  }
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: 'Manrope', sans-serif; }
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    font-family: "Material Symbols Outlined";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
 
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  font-family: 'Material Symbols Outlined';
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
+  .sig-gradient {
+    background: linear-gradient(135deg, #00442d 0%, #0f5d41 100%);
+  }
+
+  /* Repeating 45° hairline motif used across hero / banner surfaces */
+  .pattern-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #fff9eb 0,
+      #fff9eb 1px,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 12px 12px;
+  }
+
+  .pattern-lines-lg {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #fff9eb 0,
+      #fff9eb 1px,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 20px 20px;
+  }
+
+  .pattern-lines-primary {
+    background-image: repeating-linear-gradient(
+      45deg,
+      #00442d 0,
+      #00442d 1px,
+      transparent 0,
+      transparent 50%
+    );
+    background-size: 20px 20px;
+  }
 }
-
-.sig-gradient { background: linear-gradient(135deg, #00442d 0%, #0f5d41 100%); }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #faf3df; }

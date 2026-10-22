@@ -1,13 +1,16 @@
 "use client";
+
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/components/shared/Logo";
+import Icon from "@/components/shared/Icon";
 
-const links = [
+const links: Array<[string, string]> = [
   ["Services", "/customer/services"],
   ["Tracking", "/customer/track"],
   ["About", "/customer/about"],
-  ["Contact us", "/customer/contact"]
+  ["Contact us", "/customer/contact"],
 ];
 
 export default function CustomerNav() {
@@ -18,49 +21,37 @@ export default function CustomerNav() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 w-full z-50 bg-[#fff9eb]/80 backdrop-blur-xl shadow-sm"
+      className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl shadow-sm"
+      aria-label="Main"
     >
       <div className="flex justify-between items-center px-8 md:px-12 py-5">
-        
-        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.2 }}
           className="flex items-center gap-8"
         >
-          <Link href="/customer/landing" className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-[#00442d] rounded-lg flex items-center justify-center">
-              <span className="material-symbols-outlined text-[#fff9eb]" style={{ fontSize: "18px" }}>
-                card_giftcard
-              </span>
-            </div>
-            <span className="text-xl font-bold text-[#00442d]" style={{ fontFamily: "Manrope,sans-serif" }}>
-              Imanigifts Logistics
-            </span>
-          </Link>
+          <Logo href="/customer/landing" size="sm" />
 
-          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-7">
-            {links.map(([l, h], i) => (
+            {links.map(([label, href], index) => (
               <motion.div
-                key={l}
+                key={label}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + i * 0.1 }}
+                transition={{ delay: 0.3 + index * 0.1 }}
               >
                 <Link
-                  href={h}
-                  className="text-[#506357] hover:text-[#00442d] text-sm font-semibold transition-colors"
+                  href={href}
+                  className="text-secondary hover:text-primary text-sm font-semibold transition-colors"
                 >
-                  {l}
+                  {label}
                 </Link>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Right Side */}
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -69,7 +60,7 @@ export default function CustomerNav() {
         >
           <Link
             href="/customer/login"
-            className="text-[#506357] hover:text-[#00442d] text-sm font-semibold hidden md:block"
+            className="text-secondary hover:text-primary text-sm font-semibold hidden md:block"
           >
             Login
           </Link>
@@ -77,25 +68,24 @@ export default function CustomerNav() {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="/customer/signup"
-              className="text-[#fff9eb] px-5 py-2.5 rounded-lg font-semibold text-sm sig-gradient"
+              className="text-on-primary px-5 py-2.5 rounded-lg font-semibold text-sm sig-gradient"
             >
               Sign Up
             </Link>
           </motion.div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-[#506357]"
-            onClick={() => setOpen(!open)}
+            type="button"
+            className="md:hidden p-2 text-secondary"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
           >
-            <span className="material-symbols-outlined">
-              {open ? "close" : "menu"}
-            </span>
+            <Icon name={open ? "close" : "menu"} />
           </button>
         </motion.div>
       </div>
 
-      {/* Mobile Menu Animation */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -103,28 +93,28 @@ export default function CustomerNav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4 }}
-            className="md:hidden bg-[#fff9eb] border-t border-[#506357]/10 px-8 py-5 flex flex-col gap-4 overflow-hidden"
+            className="md:hidden bg-background border-t border-secondary/10 px-8 py-5 flex flex-col gap-4 overflow-hidden"
           >
-            {links.map(([l, h], i) => (
+            {links.map(([label, href], index) => (
               <motion.div
-                key={l}
+                key={label}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: index * 0.1 }}
               >
                 <Link
-                  href={h}
-                  className="text-[#506357] font-semibold"
+                  href={href}
+                  className="text-secondary font-semibold"
                   onClick={() => setOpen(false)}
                 >
-                  {l}
+                  {label}
                 </Link>
               </motion.div>
             ))}
 
             <Link
               href="/customer/login"
-              className="text-[#506357] font-semibold"
+              className="text-secondary font-semibold"
               onClick={() => setOpen(false)}
             >
               Login
